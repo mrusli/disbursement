@@ -1,0 +1,12 @@
+<?page title="Index" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="/zkau/web/zul/css/bootstrap-spacelab.min.css"?>
+<?link rel="shortcut icon" href="/zkau/web/helper/img/favicon.ico"?>
+<zk>
+<window border="normal" sclass="mainWindow" vflex="1" hflex="1">
+	<div xmlns:n="native">
+		<div sclass="row" align="center">
+	    	Pyramix System Application
+	    </div>
+	</div>
+</window>
+</zk>

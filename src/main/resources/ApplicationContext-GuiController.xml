@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="classpath*:CommonContext-Dao.xml"/>
+
+	<!-- basisController -->
+
+	<bean id="basisController" class="com.pyramix.web.common.GFCBaseController" abstract="true" scope="prototype">
+	
+	</bean>
+
+	<bean id="userListInfoControl" class="com.pyramix.web.user.UserListInfoControl" scope="prototype" parent="basisController">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+
+</beans>

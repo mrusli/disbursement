@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<import resource="CommonContext-Config.xml"></import>
+
+	<!-- common -->
+
+	<bean id="dao" class="com.pyramix.persistence.common.dao.hibernate.DaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- user -->
+	
+    <bean id="userDao" class="com.pyramix.persistence.user.dao.hibernate.UserHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+	
+	
+</beans>

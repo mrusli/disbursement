@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+		<property name="dataSource" ref="dataSourceGlobalHikari"></property>
+    	<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+			</props>
+		</property>				
+	</bean>
+	
+	<bean id="dataSourceGlobalHikari" class="com.zaxxer.hikari.HikariDataSource"
+		destroy-method="close">
+		
+		<property name="dataSourceClassName" value="com.mysql.cj.jdbc.MysqlDataSource" />
+        <property name="maximumPoolSize" value="20" />
+        <property name="maxLifetime" value="30000" />
+		<property name="dataSourceProperties">
+			<props>
+   				<prop key="url">jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_3b4614c6e963141?reconnect=true</prop>
+				<prop key="user">b3bbe091d8cc6d</prop>
+		        <prop key="password">7fe4f154</prop>
+			</props>
+		</property>
+        
+	
+	</bean>
+
+</beans>
