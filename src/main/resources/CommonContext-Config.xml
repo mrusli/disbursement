@@ -24,13 +24,11 @@
         <property name="maxLifetime" value="30000" />
 		<property name="dataSourceProperties">
 			<props>
-   				<prop key="url">jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_3b4614c6e963141?reconnect=true</prop>
+				<prop key="url">jdbc:mysql://us-cdbr-east-05.cleardb.net:3306/heroku_3b4614c6e963141?reconnect=true</prop>
 				<prop key="user">b3bbe091d8cc6d</prop>
-		        <prop key="password">7fe4f154</prop>
+				<prop key="password">7fe4f154</prop>
 			</props>
 		</property>
-        
-	
 	</bean>
 
 </beans>

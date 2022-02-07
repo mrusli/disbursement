@@ -1,0 +1,6 @@
+<?page title="Main" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Main" border="normal">
+New Content Here!
+</window>
+</zk>

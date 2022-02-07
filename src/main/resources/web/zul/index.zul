@@ -7,6 +7,9 @@
 		<div sclass="row" align="center">
 	    	Pyramix System Application
 	    </div>
+		<div sclass="row" align="center">
+		    Anda sudah logout dari sistem dan tidak dapat lagi mengakses <a href="/secure/main02">informasi yang diamankan</a>. Silahkan <a href="login">login</a> kembali untuk mendapatkan akses.	
+		</div>
 	</div>
 </window>
 </zk>

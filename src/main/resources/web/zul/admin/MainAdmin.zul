@@ -1,0 +1,6 @@
+<?page title="MainAdmin" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="MainAdmin" border="normal">
+New Content Here!
+</window>
+</zk>
