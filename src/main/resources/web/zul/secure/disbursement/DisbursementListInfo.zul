@@ -1,0 +1,73 @@
+<?page title="Disbursement" contentType="text/html;charset=UTF-8"?>
+<zk>
+<borderlayout id="disbursementListInfoWin" apply="${disbursementListInfoControl}" hflex="1" vflex="1">
+	<north border="none">
+		<vlayout>			
+			<hlayout valign="middle" style="padding: 5px 0px">
+				<label id="formTitleLabel" sclass="headTitle"></label>
+			</hlayout>
+		</vlayout>
+	</north>
+	<west width="690px" border="normal">
+		<vbox>
+			<hlayout style="padding: 11px;">
+				<button id="addButton" label="Tambah Disbursement" sclass="modButton"></button>			
+				<button id="batalButton" label="Batal Disbursement" sclass="modButton modButtonRed"></button>			
+			</hlayout>
+			<hlayout style="padding-left: 11px;" valign="middle">
+				<label id="infoResultlabel" value="Total: 8 Disbursement - " sclass="h5"></label>
+				<label value="Thn: " sclass="h5"></label><combobox id="yearCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
+				<label value="Bln: " sclass="h5"></label><combobox id="monthCombobox" width="140px" sclass="z-combobox-allign-middle"></combobox>
+			</hlayout>
+			<listbox id="disbursementListbox" mold="paging" pageSize="15" height="540px">
+				<listhead>
+					<listheader label="Tgl." width="120px"/>
+					<listheader label="Tipe" width="120px"/>
+					<listheader label="No." width="120px"/>
+					<listheader label="Jumlah" width="120px" align="right"/>
+					<listheader label="Status" width="90px" align="right"/>
+					<listheader/>
+				</listhead>
+			</listbox>
+		</vbox>		
+	</west>
+	<center border="normal">
+		<vbox>
+			<hlayout style="padding: 7px;" valign="middle">
+				<label value="Disbursement No:" sclass="h5"></label><textbox id="disbursementNoCompTextbox" width="140px" readonly="true"></textbox>
+				<label value="Tipe:" sclass="h5"></label><combobox id="disbursementTypeCombobox" width="190px" sclass="z-combobox-allign-middle" disabled="true"></combobox>
+				<label value="Date:" sclass="h5"></label><datebox id="disbursementDatebox" width="215px" disabled="true"></datebox>
+			</hlayout>
+			<hlayout style="padding-left: 11px; padding-bottom:8px;" valign="middle">
+				<label value="Jumlah:" sclass="h5"></label><textbox id="theSumOfTextbox" width="115px" style="text-align: right;" readonly="true"/>
+				<label value="Description:" sclass="h5"></label><textbox id="descriptionTextbox" width="230px" readonly="true"></textbox>
+				<label value="Reference:" sclass="h5"></label><textbox id="referenceTextbox" width="215px" readonly="true"></textbox>
+				<button id="uploadReferenceButton" width="25px" sclass="selectButton" iconSclass="z-icon-cloud-upload" disabled="true"></button>
+				<button id="addDetailButton" label="Add Details" sclass="modButton" disabled="true"></button>
+			</hlayout>
+			<listbox id="disbursementListListbox" height="245px" style="border-bottom: 1px solid lightgrey;">
+				<listhead>
+					<listheader label="No" width="60px"/>
+					<listheader label="Keterangan" width="520px"/>
+					<listheader label="Jumlah" width="160px" align="right"/>
+					<!-- to smooth out the listbox title -->
+					<listheader/>
+				</listhead>	
+			</listbox>
+			<vlayout height="285px" style="overflow: auto;">
+				<iframe id="referenceIframe" height="280px" width="960px">			
+				</iframe>
+				<image id="referenceImage">
+				</image>			
+			</vlayout>					
+			<hlayout style="padding: 5px;" valign="middle">
+				<button id="printButton" label="Print" sclass="btn-primary" iconSclass="z-icon-print"></button>
+				<button id="saveButton" label="Simpan" sclass="btn-primary" iconSclass="z-icon-save" disabled="true"/>
+				<button id="cancelButton" label="Cancel" sclass="btn-warning" iconSclass="z-icon-close" disabled="true"/>
+				<label value="Total Disbursement: " sclass="h6"></label><label id="totalDebitLabel" sclass="h6"/>
+			</hlayout>				
+		</vbox>		
+	</center>	
+</borderlayout>
+
+</zk>

@@ -11,6 +11,24 @@
 	<bean id="basisController" class="com.pyramix.web.common.GFCBaseController" abstract="true" scope="prototype">
 	
 	</bean>
+	
+	<!-- main -->
+	
+	<bean id="main02WindowControl" class="com.pyramix.web.main.Main02WindowControl" scope="prototype" parent="basisController">
+	
+	</bean>
+
+	<!-- disbursement -->
+
+	<bean id="disbursementListInfoControl" class="com.pyramix.web.disbursement.DisbursementListInfoControl" scope="prototype" parent="basisController">
+	
+	</bean>
+
+	<bean id="disbursementPrintControl" class="com.pyramix.web.disbursement.print.DisbursementPrintControl" scope="prototype" parent="basisController">
+	
+	</bean>
+
+	<!-- user -->
 
 	<bean id="userListInfoControl" class="com.pyramix.web.user.UserListInfoControl" scope="prototype" parent="basisController">
 		<property name="userDao" ref="userDao"></property>

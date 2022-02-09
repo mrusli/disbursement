@@ -1,0 +1,188 @@
+@charset "ISO-8859-1";
+/*
+	window
+*/
+.innerWindow {
+	padding: 0px;
+}
+
+/*
+	tab
+*/
+
+.z-tab {
+	font-family: revert;
+}
+
+/*  
+	remove the listbox borders
+*/
+
+.z-listbox {
+	border: 0px;
+}
+
+.z-listbox-header-border {
+	border: 0px;
+}
+
+.z-listheader {
+	border: 0px;
+}
+
+/*
+	set the header content - padding -> padding affects the row height  
+*/
+
+.z-listheader-content {
+	padding: 5px;
+	font-family: revert;
+	font-size: 1em;
+}
+
+/*  
+	set the listcell content - font-size & padding -> font-size & padding affects the row height
+*/
+
+.z-listcell-content {
+	font-family: revert;
+	font-size: 1em;
+	padding: 5px;
+}
+
+.amount > .z-listcell > .z-listcell-content {
+	float: right;
+}
+
+.z-listfooter-content {
+	color: #000000;
+	font-size: 14px;
+}
+
+.listinfoEditButton, .listinfoEditButton:hover, .listinfoEditButton:focus {
+	min-height: 12px;
+	font-size: 1em;
+	padding: 0px 6px 0px 6px;
+	background-color: #3cb521;
+    border-color: #3cb521;	
+}
+
+.listinfoCancelButton, .listinfoCancelButton:hover, .listinfoCancelButton:focus {
+	min-height: 12px;
+	font-size: 1em;
+	padding: 0px 6px 0px 6px;
+	background-color: #ffa516;
+    border-color: #ffa516;	
+}
+
+.listinfoDeleteButton, .listinfoDeleteButton:hover, .listinfoDeleteButton:focus {
+	min-height: 12px;
+	font-size: 1em;
+	padding: 0px 6px 0px 6px;
+	background-color: #e80c00;
+    border-color: #e80c00;	
+}
+
+.modButton {
+	font-family: revert;
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;	
+}
+
+.modButton-Reverse {
+	font-family: revert;
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;
+	background-color: white;
+	color: #0093F9;
+}
+
+/* when button is cliced */
+.modButton-Reverse:active {
+	background-color: white;
+	color: #0093F9;
+}
+
+.modButtonRed {
+	font-family: revert;
+	font-size: 14px;
+	padding: 5px 10px 5px 10px;	
+ 	color: white;
+ 	background-color: #f90000;	
+}
+.modButtonRed:active {
+	color: white;
+ 	background-color: #f90000;
+}
+.modButtonRed:focus {
+	color: white;
+ 	background-color: #f90000;
+}
+.modButtonRed:hover {
+	color: white;
+ 	background-color: #f90000;
+}
+
+
+.summaryGrid {
+	border: 0px;
+}
+
+.hlayout-box {
+	padding: 5px;
+}
+
+/*
+*/
+.z-combobox-listinfo {
+	padding: 0px;
+	height: 22px;
+	font-size: 1em;
+	border-radius: 0px;
+	display: inline;
+}
+
+.z-combobox-listinfo > .z-combobox-input {
+	width: 80px;
+}
+
+.comboitem-with-border {
+	border-style: solid;
+}
+
+.red-background.z-listitem .z-listcell {
+	background: red;
+}
+
+/*
+	Grid
+*/
+.grid-column > .z-column-content {
+	padding: 5px;
+	font-family: revert;
+	font-size: revert;
+}
+
+.grid-column {
+	border-left: 0px;
+	border-bottom: 0px;
+}
+
+.z-columns-bar {
+	border-left: 0px;
+	border-bottom: 0px;
+}
+
+.gridLabel-bold {
+	font-family: revert;
+	font-size: revert;
+	font-weight: bold;
+}
+
+.gridVbox {
+	float: right;
+}
+
+.footer-total > .z-footer-content {
+	float: right;
+}

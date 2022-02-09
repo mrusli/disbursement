@@ -52,6 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // please refer to https://www.zkoss.org/wiki/ZK%20Developer's%20Reference/Security%20Tips/Cross-site%20Request%20Forgery
 		http.csrf().disable();
 		// redirect to https in Spring Security
+		// -- disable ssl when deploying to heroku
 		// http.requiresChannel()
 		//	.requestMatchers(r -> r.getHeader("X-Forwarded-Proto") != null)
 		//	.requiresSecure();
@@ -65,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 			.formLogin()
 				.loginPage("/login").permitAll()
-				.defaultSuccessUrl("/landing", true) // send to target URL; allows controller to process the default-target-url
+				.defaultSuccessUrl("/success", true) // send to target URL; allows controller to process the default-target-url
 				.failureUrl("/login?error=true")
 			.and()
                 .rememberMe()

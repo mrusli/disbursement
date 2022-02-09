@@ -1,6 +1,19 @@
 <?page title="Main" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?link rel="stylesheet" type="text/css" href="/zkau/web/zul/css/bootstrap-spacelab.min.css"?>
+<?link rel="stylesheet" type="text/css" href="/zkau/web/zul/css/style.css"?>
+<?link rel="stylesheet" type="text/css" href="/zkau/web/zul/css/style_ListInfo.css"?>
+<?link rel="stylesheet" type="text/css" href="/zkau/web/zul/css/style_Dialog.css"?>
+<?link rel="stylesheet" type="text/css" href="/zkau/web/zul/css/style_preprint.css"?>
+<?link rel="shortcut icon" href="/zkau/web/helper/img/favicon.ico"?>
 <zk>
-<window title="Main" border="normal">
-New Content Here!
+<window border="normal" id="main02Window" apply="${main02WindowControl}" sclass="mainWindow" width="100%" height="100%">
+	<hlayout>
+		<label id="pageTitleLabel" sclass="headTitle" visible="false"></label>	
+	</hlayout>
+	<div>
+		<menubar id="mainMenubar" sclass="c-menubar"></menubar>
+	</div>	
+	<include id="mainInclude" hflex="1" vflex="1" style="overflow: auto;"></include>
 </window>
 </zk>

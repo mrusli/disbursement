@@ -1,0 +1,199 @@
+@charset "ISO-8859-1";
+
+.mainWindow {
+	border-color: #0093f9;
+	border-radius: 2px;
+	background-color: #0093f9;
+}
+
+.subWindow {
+	padding: 0px;
+}
+
+.headTitle {
+	font-family: revert;
+	font-size: 2em;
+	font-weight: revert;
+	padding-left: 5px;
+}
+
+.subHeadTitle {
+	padding-left: 15px;
+	font-size: 1.5em;
+}
+
+.c-label {
+	font-family: revert;
+	font-size: revert;
+	font-weight: revert;
+}
+
+.c-menubar {
+	border-top: 0px;
+	border-bottom: 0px;
+	background: #0093f9;
+	padding: 0px;
+}
+
+.main-menuitem > .z-menuitem-content, .z-menu-content {
+	color: white;
+	border: revert;
+	-webkit-border-radius: revert;
+	border-radius: revert;
+}
+
+.main-menuitem > .z-menuitem-content > .z-menuitem-text {
+	font-family: revert;
+	font-size: revert;
+	font-weight: revert;
+}
+
+.main-menuitem > .z-menuitem-text, .z-menu-text {
+	color: white;
+	font-family: revert;
+	font-size: revert;
+	font-weight: revert;
+}
+
+/*
+
+*/
+
+.z-menubar-horizontal li {
+	margin: 0px;
+}
+
+.z-menupopup {
+	border: 0px;
+	padding: 0px;
+	background: none;
+	border-radius: 0px;
+}
+
+.z-menupopup .z-menu-content, .z-menupopup .z-menuitem-content {
+	background: #0093f9;
+}
+
+.z-menuitem-content {
+	background: #0093f9;
+}
+
+.z-menu-content {
+	background: #0093f9;
+}
+
+.z-menu-content, .z-menuitem-content {
+	border: 0px;
+	-webkit-border-radius: 0px; 
+    border-radius: 0px;
+}
+
+.z-menu-content:hover {
+	color: white;
+	background: #0f00cc;
+}
+
+.z-menu-selected >.z-menu-content {
+	background-color: #0f00cc; 
+}
+
+.z-menuitem-content:hover {
+	background: #0f00cc;
+}
+
+/*
+*/
+
+.z-menu-selected {
+	background: #0f00cc;
+}
+
+.z-menu-icon {
+	color: white;
+}
+
+.z-menubar ul {
+	border-radius: 0px;
+}
+
+/*
+*/
+.home-main-menuitem > .z-menuitem-content > .z-menuitem-text {
+	font-family: revert;
+	font-size: revert;
+	font-weight: revert;
+	color: white;
+	border: revert;
+	-webkit-border-radius: revert;
+	border-radius: revert;
+}
+
+.logout-main-menuitem > .z-menuitem-content > .z-menuitem-text {
+	font-family: revert;
+	font-size: revert;
+	font-weight: bold;
+	color: white;
+	border: revert;
+	-webkit-border-radius: revert;
+	border-radius: revert;
+}
+
+/*
+*/
+
+.c-panel {
+	border-radius: 0px;
+}
+
+.c-panel > .z-panel-head > .z-panel-header {
+	padding: 4px;
+	font-family: revert;
+	font-size: revert;
+	font-weight: bold;
+	font-style: revert;
+	color: #0093f9;
+}
+
+/*
+*/
+
+.totalLabel {
+	font-weight: bold;
+}
+
+.z-north-body, .z-south-body, .z-west-body, .z-center-body, .z-east-body {
+    line-height: 1px;
+    padding: 0px;
+    color: rgba(0,0,0,0.9);
+}
+
+.z-tabbox {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 0px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+/*
+	Turn-Off Grid component build-in hover effect for each row
+	http://forum.zkoss.org/question/59057/remove-the-hover-effect-from-the-grid-component/?sort=oldest&page=2#sort-top	
+*/
+.row-content > .z-row-inner > .z-row-content {
+	font-family: revert;
+	font-size: revert;
+	font-weight: revert;
+	padding: 6px 6px;	
+}
+
+.z-row-content, .z-row-inner, .z-rows, .z-row, .z-grid-odd, .z-grid-body, .z-grid-header, .z-cell { 
+	background: transparent !important; 
+	border: none; 
+}
+
+.dark-mode > .z-page > .z-window, 
+.dark-mode > .z-page > .z-window > .z-window-content, 
+.dark-mode > .z-page > .z-window > .z-window-content > .z-div > .z-menubar {
+	background-color: black;
+	color: white;
+}

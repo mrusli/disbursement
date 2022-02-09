@@ -31,23 +31,22 @@ public class LoginController {
 	}
 
 	/**
-	 * Handles the "/landing" URL. This function controls how the URL should be redirected or 
-	 * forwarded based upon user's rolls.
+	 * Handles the "/success" URL.
 	 * 
 	 * ref: https://stackoverflow.com/questions/31524426/securityconfig-2-success-url-for-different-roles
 	 * 
 	 * @param request
 	 * @return {@link String}
 	 */
-	@RequestMapping("/landing")
+	@RequestMapping("/success")
 	public String landing(HttpServletRequest request) {
 		log.info("Login Success with "+request.getUserPrincipal());
 		 
-		if (request.isUserInRole("ROLE_ADMIN")) {
-			return "redirect:/admin/MainAdmin";
-		}
+		// if (request.isUserInRole("ROLE_ADMIN")) {
+		//	return "redirect:/admin/MainAdmin";
+		// }
 		
-		return "redirect:/secure/main02";
+		return "secure/main02";
 	}	
 		
 	@GetMapping("/secure/{page}")
