@@ -29,6 +29,10 @@
             <name>ZK EE Repository</name>
             <url>http://maven.zkoss.org/repo/zk/ee</url>
         </repository>
+		<repository>
+			<id>jaspersoft-third-party</id>
+			<url>https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/</url>
+		</repository>        
     </repositories>	
 
 	<properties>
@@ -136,6 +140,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		
 		<dependency>
 		    <groupId>net.sf.jasperreports</groupId>
 		    <artifactId>jasperreports</artifactId>
