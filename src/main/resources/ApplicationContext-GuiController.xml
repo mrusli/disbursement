@@ -21,7 +21,9 @@
 	<!-- disbursement -->
 
 	<bean id="disbursementListInfoControl" class="com.pyramix.web.disbursement.DisbursementListInfoControl" scope="prototype" parent="basisController">
-	
+		<property name="settingsDao" ref="settingsDao"></property>
+		<property name="disbursementDao" ref="disbursementDao"></property>
+		<property name="disbursementSerialNumberDao" ref="disbursementSerialNumberDao"></property>
 	</bean>
 
 	<bean id="disbursementPrintControl" class="com.pyramix.web.disbursement.print.DisbursementPrintControl" scope="prototype" parent="basisController">

@@ -18,5 +18,20 @@
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 	
+	<!-- settings -->
+	
+	<bean id="settingsDao" class="com.pyramix.persistence.settings.dao.hibernate.SettingsHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
+	
+	<!-- disbursement -->
+	
+	<bean id="disbursementDao" class="com.pyramix.persistence.disbursement.dao.hibernate.DisbursementHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
+	
+	<bean id="disbursementSerialNumberDao" class="com.pyramix.persistence.disbursement.serialnumber.dao.hibernate.DisbursementSerialNumberHibernate">
+    	<property name="sessionFactory" ref="sessionFactory"></property>	
+	</bean>
 	
 </beans>

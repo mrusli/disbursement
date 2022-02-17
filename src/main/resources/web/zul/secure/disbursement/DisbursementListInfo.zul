@@ -12,10 +12,11 @@
 		<vbox>
 			<hlayout style="padding: 11px;">
 				<button id="addButton" label="Tambah Disbursement" sclass="modButton"></button>			
-				<button id="batalButton" label="Batal Disbursement" sclass="modButton modButtonRed"></button>			
+				<button id="batalButton" label="Batal Disbursement" sclass="modButton modButtonRed" disabled="true"></button>			
 			</hlayout>
 			<hlayout style="padding-left: 11px;" valign="middle">
 				<label id="infoResultlabel" value="Total: 8 Disbursement - " sclass="h5"></label>
+				<label value="Tipe: " sclass="h5"></label><combobox id="typeListCombobox" width="120px" sclass="z-combobox-allign-middle"></combobox>
 				<label value="Thn: " sclass="h5"></label><combobox id="yearCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
 				<label value="Bln: " sclass="h5"></label><combobox id="monthCombobox" width="140px" sclass="z-combobox-allign-middle"></combobox>
 			</hlayout>
@@ -35,8 +36,10 @@
 		<vbox>
 			<hlayout style="padding: 7px;" valign="middle">
 				<label value="Disbursement No:" sclass="h5"></label><textbox id="disbursementNoCompTextbox" width="140px" readonly="true"></textbox>
-				<label value="Tipe:" sclass="h5"></label><combobox id="disbursementTypeCombobox" width="190px" sclass="z-combobox-allign-middle" disabled="true"></combobox>
+				<label value="Tipe:" sclass="h5"></label><combobox id="disbursementTypeCombobox" width="190px" sclass="z-combobox-allign-middle" disabled="false"></combobox>
 				<label value="Date:" sclass="h5"></label><datebox id="disbursementDatebox" width="215px" disabled="true"></datebox>
+				<checkbox id="isDepositCheckbox" label="Setoran" sclass="checkboxAlign" disabled="true"></checkbox>
+				<checkbox id="isPettyCashCheckbox" label="Petty-Cash" sclass="checkboxAlign" disabled="true"></checkbox>
 			</hlayout>
 			<hlayout style="padding-left: 11px; padding-bottom:8px;" valign="middle">
 				<label value="Jumlah:" sclass="h5"></label><textbox id="theSumOfTextbox" width="115px" style="text-align: right;" readonly="true"/>

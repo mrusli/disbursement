@@ -4,11 +4,17 @@
 	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-
 		<!-- user -->
 		<mapping class="com.pyramix.domain.user.User"/>
 		<mapping class="com.pyramix.domain.user.UserRole"/>
 
-
+		<!-- settings -->
+		<mapping class="com.pyramix.domain.settings.Settings"/>
+		
+		<!-- disbursement -->
+		<mapping class="com.pyramix.domain.disbursement.Disbursement"></mapping>
+		<mapping class="com.pyramix.domain.disbursement.DisbursementDetail"></mapping>
+		<mapping class="com.pyramix.domain.disbursement.DisbursementSerialNumber"/>
+		
 	</session-factory>
 </hibernate-configuration>
