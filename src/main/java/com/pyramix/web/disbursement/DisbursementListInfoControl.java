@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.ZoneId;
 import java.time.format.TextStyle;
-import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -154,14 +153,14 @@ public class DisbursementListInfoControl extends GFCBaseController {
 		// setup the filter selections
 		setupDisbursementListFilter(disbursementList);
 		// current date
-		LocalDate currentDate = getLocalDate(ZoneId.of(getSettings().getTimeZoneId()));
+		// LocalDate currentDate = getLocalDate(ZoneId.of(getSettings().getTimeZoneId()));
 		// set filter to current year and month
-		setDisbursementFilterCurrentDate(currentDate);
+		// setDisbursementFilterCurrentDate(currentDate);
 		// query for current year month only
-		Date startDate = asDate(currentDate.with(TemporalAdjusters.firstDayOfMonth()), ZoneId.of(getSettings().getTimeZoneId()));
-		Date endDate = asDate(currentDate.with(TemporalAdjusters.lastDayOfMonth()), ZoneId.of(getSettings().getTimeZoneId()));		
+		// Date startDate = asDate(currentDate.with(TemporalAdjusters.firstDayOfMonth()), ZoneId.of(getSettings().getTimeZoneId()));
+		// Date endDate = asDate(currentDate.with(TemporalAdjusters.lastDayOfMonth()), ZoneId.of(getSettings().getTimeZoneId()));		
 		disbursementList = 
-				getDisbursementDao().findDisbursementByType_Date(null, startDate, endDate, false);
+				getDisbursementDao().findDisbursementByType_Date(null, null, null, false);
 		// display
 		displayDisbursementListInfo(disbursementList);
 	}
@@ -176,6 +175,7 @@ public class DisbursementListInfoControl extends GFCBaseController {
 		infoResultlabel.setValue("Total: " + disbursementList.size() + " Disbursement - ");		
 	}
 
+	@SuppressWarnings("unused")
 	private void setDisbursementFilterCurrentDate(LocalDate currentDate) {
 		int currentYear = currentDate.getYear();
 		for(Comboitem comboitem:yearCombobox.getItems()) {
