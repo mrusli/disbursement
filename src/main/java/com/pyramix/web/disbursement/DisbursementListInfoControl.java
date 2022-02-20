@@ -620,6 +620,7 @@ public class DisbursementListInfoControl extends GFCBaseController {
 		
 		// status set to 'OK' -- not BATAL
 		batalCheckbox.setChecked(false);
+		disbursement.setDisbursementStatus(DisbursementStatus.OK);
 		
 		setDisbursementDetailListModelList(new ListModelList<DisbursementDetail>());
 		disbursementListListbox.getItems().clear();
