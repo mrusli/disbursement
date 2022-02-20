@@ -85,6 +85,11 @@ public class Disbursement extends IdBasedObject {
 	@JoinColumn(name = "user_create_id_fk")
 	private User userCreate;
 	
+	//  `status` int DEFAULT NULL,
+	@Column(name = "status")
+	@Enumerated(EnumType.ORDINAL)
+	private DisbursementStatus disbursementStatus;
+	
 	//	`disbursement_join_detail`
 	@OneToMany(cascade = { CascadeType.ALL }, orphanRemoval = true, fetch = FetchType.EAGER)
 	@JoinTable(name = "disbursement_join_detail",
@@ -194,5 +199,13 @@ public class Disbursement extends IdBasedObject {
 
 	public void setPettyCash(boolean pettyCash) {
 		this.pettyCash = pettyCash;
+	}
+
+	public DisbursementStatus getDisbursementStatus() {
+		return disbursementStatus;
+	}
+
+	public void setDisbursementStatus(DisbursementStatus disbursementStatus) {
+		this.disbursementStatus = disbursementStatus;
 	}
 }

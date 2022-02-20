@@ -122,7 +122,10 @@
 	color: white;
  	background-color: #f90000;
 }
-
+.modButtonRed:hover[disabled] {
+	color: rgba(0, 0, 0,0.34);
+ 	background-color: #D9D9D9;
+}
 
 .summaryGrid {
 	border: 0px;

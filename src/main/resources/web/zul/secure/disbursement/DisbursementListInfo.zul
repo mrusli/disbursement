@@ -12,13 +12,13 @@
 		<vbox>
 			<hlayout style="padding: 11px;">
 				<button id="addButton" label="Tambah Disbursement" sclass="modButton"></button>			
-				<button id="batalButton" label="Batal Disbursement" sclass="modButton modButtonRed" disabled="true"></button>			
 			</hlayout>
 			<hlayout style="padding-left: 11px;" valign="middle">
 				<label id="infoResultlabel" value="Total: 8 Disbursement - " sclass="h5"></label>
 				<label value="Tipe: " sclass="h5"></label><combobox id="typeListCombobox" width="120px" sclass="z-combobox-allign-middle"></combobox>
 				<label value="Thn: " sclass="h5"></label><combobox id="yearCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
-				<label value="Bln: " sclass="h5"></label><combobox id="monthCombobox" width="140px" sclass="z-combobox-allign-middle"></combobox>
+				<label value="Bln: " sclass="h5"></label><combobox id="monthCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
+				<button id="filterListButton" width="25px" sclass="selectButton" iconSclass="z-icon-filter" disabled="false"></button>
 			</hlayout>
 			<listbox id="disbursementListbox" mold="paging" pageSize="15" height="540px">
 				<listhead>
@@ -26,7 +26,7 @@
 					<listheader label="Tipe" width="120px"/>
 					<listheader label="No." width="120px"/>
 					<listheader label="Jumlah" width="120px" align="right"/>
-					<listheader label="Status" width="90px" align="right"/>
+					<listheader label="Status" width="90px"/>
 					<listheader/>
 				</listhead>
 			</listbox>
@@ -36,7 +36,7 @@
 		<vbox>
 			<hlayout style="padding: 7px;" valign="middle">
 				<label value="Disbursement No:" sclass="h5"></label><textbox id="disbursementNoCompTextbox" width="140px" readonly="true"></textbox>
-				<label value="Tipe:" sclass="h5"></label><combobox id="disbursementTypeCombobox" width="190px" sclass="z-combobox-allign-middle" disabled="false"></combobox>
+				<label value="Tipe:" sclass="h5"></label><combobox id="disbursementTypeCombobox" width="190px" sclass="z-combobox-allign-middle" disabled="true"></combobox>
 				<label value="Date:" sclass="h5"></label><datebox id="disbursementDatebox" width="215px" disabled="true"></datebox>
 				<checkbox id="isDepositCheckbox" label="Setoran" sclass="checkboxAlign" disabled="true"></checkbox>
 				<checkbox id="isPettyCashCheckbox" label="Petty-Cash" sclass="checkboxAlign" disabled="true"></checkbox>
@@ -47,12 +47,13 @@
 				<label value="Reference:" sclass="h5"></label><textbox id="referenceTextbox" width="215px" readonly="true"></textbox>
 				<button id="uploadReferenceButton" width="25px" sclass="selectButton" iconSclass="z-icon-cloud-upload" disabled="true"></button>
 				<button id="addDetailButton" label="Add Details" sclass="modButton" disabled="true"></button>
+				<checkbox id="batalCheckbox" label="Batal" sclass="checkboxAlign" disabled="true"></checkbox>
 			</hlayout>
 			<listbox id="disbursementListListbox" height="245px" style="border-bottom: 1px solid lightgrey;">
 				<listhead>
-					<listheader label="No" width="60px"/>
-					<listheader label="Keterangan" width="520px"/>
-					<listheader label="Jumlah" width="160px" align="right"/>
+					<listheader label="No" width="60px" valign="top"/>
+					<listheader label="Keterangan" width="520px" valign="top"/>
+					<listheader label="Jumlah" width="160px" align="right" valign="top"/>
 					<!-- to smooth out the listbox title -->
 					<listheader/>
 				</listhead>	
@@ -64,10 +65,10 @@
 				</image>			
 			</vlayout>					
 			<hlayout style="padding: 5px;" valign="middle">
-				<button id="printButton" label="Print" sclass="btn-primary" iconSclass="z-icon-print"></button>
 				<button id="saveButton" label="Simpan" sclass="btn-primary" iconSclass="z-icon-save" disabled="true"/>
 				<button id="cancelButton" label="Cancel" sclass="btn-warning" iconSclass="z-icon-close" disabled="true"/>
-				<label value="Total Disbursement: " sclass="h6"></label><label id="totalDebitLabel" sclass="h6"/>
+				<button id="printButton" label="Print" sclass="btn-primary" iconSclass="z-icon-print"></button>
+				<label value="Total Disbursement: " sclass="h6"></label><label id="totalDisbursementLabel" sclass="h6"/>
 			</hlayout>				
 		</vbox>		
 	</center>	

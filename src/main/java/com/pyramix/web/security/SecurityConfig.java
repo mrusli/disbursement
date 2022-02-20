@@ -84,8 +84,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     	// 29/01/2022 - this causes 'Unable to activate destroyed desktop' exception
                         // UserSecurityDetails securityDetails = (UserSecurityDetails) authentication.getPrincipal();
                         // log.info("User '"+securityDetails.getUsername()+"' logged out successfully");
-                        
-                        response.sendRedirect(request.getContextPath());
+                        log.info("Logout Success");
+                    	response.sendRedirect("/");
                     }
 
                 });
