@@ -310,7 +310,7 @@ public class DisbursementListInfoControl extends GFCBaseController {
 						disbursementTypeCombobox.setDisabled(false);
 						disbursementDatebox.setDisabled(false);
 						isDepositCheckbox.setDisabled(false);
-						isPettyCashCheckbox.setDisabled(false);
+						// isPettyCashCheckbox.setDisabled(false);
 						theSumOfTextbox.setDisabled(false);
 						theSumOfTextbox.setReadonly(false);
 						theSumOfTextbox.setValue(disbursement.getTheSumOf().toString());
