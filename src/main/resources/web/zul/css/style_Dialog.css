@@ -86,6 +86,13 @@
     border-color: #3cb521;
 }
 
+.delItemButton, .delItemButton:hover, .delItemButton:focus {
+	padding: 2px 6px 0px 6px;
+	background-color: #f90000;
+    border-color: #f90000;
+}
+
+
 .minusItemButton, .minusItemButton:hover, .minusItemButton:focus {
 	min-height: 12px;
 	font-size: 1em;

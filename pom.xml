@@ -13,7 +13,7 @@
 
 	<groupId>com.pyramix.web</groupId>
 	<artifactId>disbursement</artifactId>
-	<version>4.0.0</version>
+	<version>4.0.2</version>
 
 	<name>disbursement</name>
 	<description>Financial disbursement</description>

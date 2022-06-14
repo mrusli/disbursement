@@ -34,4 +34,10 @@
     	<property name="sessionFactory" ref="sessionFactory"></property>	
 	</bean>
 	
+	<!-- disbursement report -->
+	
+	<bean id="disbursementReportDao" class="com.pyramix.persistence.disbursement.report.dao.hibernate.DisbursementReportHibernate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 </beans>

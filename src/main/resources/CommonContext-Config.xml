@@ -24,10 +24,17 @@
         <property name="maxLifetime" value="30000" />
 		<property name="dataSourceProperties">
 			<props>
-<prop key="url">jdbc:mysql://localhost:3308/e041_schema?autoReconnect=true</prop>
-<prop key="user">admin01</prop>
-<prop key="password">Password123!</prop>
-			</props>
+				<!-- aws rds 
+				<prop key="url">jdbc:mysql://mysql80-rds-instance.chndvf7fb3sj.us-west-2.rds.amazonaws.com:3306/e041_schema?autoReconnect=true</prop>
+				<prop key="user">root</prop>
+				<prop key="password">q58Qg3J3YUTX</prop>			
+				 -->
+				<!-- localhost --> 			
+				<prop key="url">jdbc:mysql://localhost:3308/e041_schema?autoReconnect=true</prop>
+				<prop key="user">admin01</prop>
+				<prop key="password">Password123!</prop>
+				
+ 			</props>
 		</property>
 	</bean>
 

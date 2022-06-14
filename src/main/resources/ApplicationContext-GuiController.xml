@@ -12,6 +12,12 @@
 	
 	</bean>
 	
+	<!-- dialogs  -->
+	
+	<bean id="decimalboxDialogControl" class="com.pyramix.web.dialogs.DecimalboxDialogControl" scope="prototype" parent="basisController">
+	
+	</bean>
+	
 	<!-- main -->
 	
 	<bean id="main02WindowControl" class="com.pyramix.web.main.Main02WindowControl" scope="prototype" parent="basisController">
@@ -27,6 +33,18 @@
 	</bean>
 
 	<bean id="disbursementPrintControl" class="com.pyramix.web.disbursement.print.DisbursementPrintControl" scope="prototype" parent="basisController">
+	
+	</bean>
+
+	<!-- disbursement report -->
+
+	<bean id="disbursementReportControl" class="com.pyramix.web.disbursement.DisbursementReportControl" scope="prototype" parent="basisController">
+		<property name="settingsDao" ref="settingsDao"></property>
+		<property name="disbursementDao" ref="disbursementDao"></property>
+		<property name="disbursementReportDao" ref="disbursementReportDao"></property>	
+	</bean>
+
+	<bean id="disbursementReportPrintControl" class="com.pyramix.web.disbursement.report.print.DisbursementReportPrintControl" scope="prototype" parent="basisController">
 	
 	</bean>
 

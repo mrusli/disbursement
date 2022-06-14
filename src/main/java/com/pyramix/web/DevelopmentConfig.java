@@ -32,9 +32,6 @@ public class DevelopmentConfig {
 		WebApps.getCurrent().getConfiguration().setDebugJS(true);
 
 		// enable for debugging MVVM commands and binding (very verbose)
-		Library.setProperty("org.zkoss.bind.DebuggerFactory.enable", "false");
-		
+		Library.setProperty("org.zkoss.bind.DebuggerFactory.enable", "false");	
 	}
-	
-	
 }

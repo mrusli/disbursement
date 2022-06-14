@@ -64,4 +64,20 @@ public interface DisbursementDao {
 	 * @throws Exception
 	 */
 	public List<Disbursement> findDisbursementByType_Date(DisbursementType disbursementType, Date startDate, Date endDate, boolean desc) throws Exception;
+
+	/**
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Disbursement> findAll_NonBatal_Disbursement() throws Exception;
+
+	/**
+	 * @param disbursementType
+	 * @param startDate
+	 * @param endDate
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Disbursement> findAll_NonBatal_Disbursement_ByType_Date(DisbursementType disbursementType,
+			Date startDate, Date endDate) throws Exception;
 }

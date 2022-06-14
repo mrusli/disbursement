@@ -12,9 +12,13 @@
 		<mapping class="com.pyramix.domain.settings.Settings"/>
 		
 		<!-- disbursement -->
-		<mapping class="com.pyramix.domain.disbursement.Disbursement"></mapping>
-		<mapping class="com.pyramix.domain.disbursement.DisbursementDetail"></mapping>
+		<mapping class="com.pyramix.domain.disbursement.Disbursement"/>
+		<mapping class="com.pyramix.domain.disbursement.DisbursementDetail"/>
 		<mapping class="com.pyramix.domain.disbursement.DisbursementSerialNumber"/>
+		
+		<!-- disbursement report -->
+		<mapping class="com.pyramix.domain.disbursement.report.DisbursementReportHeader"/>
+		<mapping class="com.pyramix.domain.disbursement.report.DisbursementReportDetail"/>
 		
 	</session-factory>
 </hibernate-configuration>

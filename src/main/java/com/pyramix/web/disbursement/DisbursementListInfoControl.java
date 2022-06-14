@@ -159,8 +159,40 @@ public class DisbursementListInfoControl extends GFCBaseController {
 		// query for current year month only
 		// Date startDate = asDate(currentDate.with(TemporalAdjusters.firstDayOfMonth()), ZoneId.of(getSettings().getTimeZoneId()));
 		// Date endDate = asDate(currentDate.with(TemporalAdjusters.lastDayOfMonth()), ZoneId.of(getSettings().getTimeZoneId()));		
-		disbursementList = 
-				getDisbursementDao().findDisbursementByType_Date(null, null, null, false);
+		Date startDate, endDate;
+		int year;
+		// check whether the filter is in effect
+		if (yearCombobox.getSelectedIndex()!=0) {
+			// filter is in effect, use filter
+			year = yearCombobox.getSelectedItem().getValue();
+			startDate = asDate(LocalDate.of(year, Month.JANUARY, 1), ZoneId.of(getSettings().getTimeZoneId()));
+			endDate = asDate(LocalDate.of(year, Month.DECEMBER, 31), ZoneId.of(getSettings().getTimeZoneId()));
+			// use type???
+			if (typeListCombobox.getSelectedIndex()!=0) {
+				// use type and year
+				DisbursementType type = typeListCombobox.getSelectedItem().getValue();
+				disbursementList = 
+						getDisbursementDao().findDisbursementByType_Date(type, startDate, endDate, false);
+			} else if (monthCombobox.getSelectedIndex()!=0) {
+				// use year and month
+				Month month = monthCombobox.getSelectedItem().getValue();
+				startDate = asDate(LocalDate.of(year, month, 1), ZoneId.of(getSettings().getTimeZoneId()));
+				int dateLength = month.length(LocalDate.of(year, month, 1).isLeapYear());
+				endDate = asDate(LocalDate.of(year, month, dateLength), ZoneId.of(getSettings().getTimeZoneId()));
+				disbursementList = 
+						getDisbursementDao().findDisbursementByType_Date(null, startDate, endDate, false);								
+			} else {
+				// use year only
+				disbursementList = 
+						getDisbursementDao().findDisbursementByType_Date(null, startDate, endDate, false);				
+			}
+			
+		} else {
+			// filter not in effect
+			disbursementList = 
+					getDisbursementDao().findDisbursementByType_Date(null, null, null, false);			
+		}
+		
 		// display
 		displayDisbursementListInfo(disbursementList);
 	}
@@ -196,6 +228,12 @@ public class DisbursementListInfoControl extends GFCBaseController {
 	}
 
 	private void setupDisbursementListFilter(List<Disbursement> disbursementList) {
+		// user MUST select the 'year' at the very minimal for a valid filter
+		// we test whether the 'year' is selected
+		// if it's selected, this means the filter is in effect, and we do not reset the filter
+		if (yearCombobox.getSelectedItem()!=null) {
+			return;
+		}
 		List<Date> listOfDates = new ArrayList<Date>();
 		for(Disbursement disbursement : disbursementList) {
 			Date disbursementDate = disbursement.getDisbursementDate();
@@ -731,7 +769,8 @@ public class DisbursementListInfoControl extends GFCBaseController {
 
 	public void onClick$saveButton(Event event) throws Exception {
 		Long id;
-
+		int selIndex = 0;
+		
 		Disbursement disbursement = getDisbursementListModelList().get(0);
 		// check total
 		BigDecimal disbursementTotal = getDecimalValue(theSumOfTextbox.getValue());
@@ -746,9 +785,11 @@ public class DisbursementListInfoControl extends GFCBaseController {
 			log.info("Save : "+disbursement.toString());
 			id = getDisbursementDao().save(disbursement);
 			disbursement = getDisbursementDao().findDisbursementById(id);
-			log.info("Save : Verify : "+disbursement.toString());
+			log.info("Save : Verify : "+disbursement.toString());			
 		} else {
 			disbursement = disbursementListbox.getSelectedItem().getValue();
+			selIndex = disbursementListbox.getSelectedIndex();
+			log.info("Selected Index to Update: "+selIndex);
 			disbursement = getModifiedDisbursement(disbursement);
 			log.info("Update : "+disbursement.toString());
 			getDisbursementDao().update(disbursement);
@@ -761,13 +802,20 @@ public class DisbursementListInfoControl extends GFCBaseController {
 		disableComponents();
 		// re-display
 		displayDisbursementList();
-		// get and display the last item on the list
-		int lastIndex = getDisbursementListModelList().size()-1;
-		Disbursement selDisbursement = getDisbursementListModelList().get(lastIndex);
-		// set as selected
-		disbursementListbox.setSelectedIndex(lastIndex);
-		// display selected info
-		displayDisbursementInfo(selDisbursement);
+		
+		if (disbursement.getId().compareTo(Long.MIN_VALUE)==0) {
+			// get and display the last item on the list
+			int lastIndex = getDisbursementListModelList().size()-1;
+			disbursement = getDisbursementListModelList().get(lastIndex);
+			// set as selected
+			disbursementListbox.setSelectedIndex(lastIndex);
+			// display selected info
+			displayDisbursementInfo(disbursement);			
+		} else {
+			disbursementListbox.setSelectedIndex(selIndex);
+			// display selected info
+			displayDisbursementInfo(disbursement);			
+		}
 	}
 
 	private void disableComponents() {

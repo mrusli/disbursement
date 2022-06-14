@@ -1,0 +1,22 @@
+<?page title="DecimalboxDialog" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window width="550px" height="120px" border="normal"
+	id="decimalboxDialogWin" apply="${decimalboxDialogControl}">
+	<grid>
+		<rows>
+			<row>
+				<cell width="65%">
+					<label id="promptLabel"></label>
+				</cell>
+				<cell>
+					<decimalbox id="promptDecimalbox" width="120px" style="text-align: right;"/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	<hlayout style="padding-top: 5px;">
+		<button id="okButton" label="OK"></button>
+		<button id="cancelButton" label="Cancel"></button>	
+	</hlayout>
+</window>
+</zk>

@@ -1,0 +1,56 @@
+<?page title="Disbursement Report" contentType="text/html;charset=UTF-8"?>
+<zk>
+<borderlayout id="disbursementReportWin" apply="${disbursementReportControl}" hflex="1" vflex="1">
+	<north border="none">
+		<vlayout>			
+			<hlayout valign="middle" style="padding: 5px 0px">
+				<label id="formTitleLabel" sclass="headTitle"></label>
+			</hlayout>
+		</vlayout>
+	</north>
+	<west width="490px" border="normal">
+		<vbox>	
+			<hlayout style="padding-top: 15px; padding-left: 5px;" valign="middle">
+				<label id="infoResultlabel" value="Total: 8 Report - " sclass="h5"></label>
+				<label value="Thn: " sclass="h5"></label><combobox id="yearCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
+				<button id="filterListButton" width="25px" sclass="selectButton" iconSclass="z-icon-filter" disabled="true"></button>
+			</hlayout>
+			<listbox id="disbursementReportHeaderListbox" mold="paging" pageSize="15" height="540px">
+				<listhead>
+					<listheader label="Tgl." width="120px"/>
+					<listheader label="Report-Title" width="220px"/>
+					<listheader label="Trans-Date" width="80px"/>
+					<listheader width="45px"/>
+					<listheader/>
+				</listhead>
+			</listbox>		
+		</vbox>
+	</west>
+	<center border="normal">
+		<vbox>
+			<hlayout style="padding-top: 12px; padding-left: 5px;" valign="middle">
+				<label value="Tipe: " sclass="h5"></label><combobox id="typeListCombobox" width="120px" sclass="z-combobox-allign-middle"></combobox>
+				<label value="Thn: " sclass="h5"></label><combobox id="yearReportCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
+				<label value="Bln: " sclass="h5"></label><combobox id="monthReportCombobox" width="80px" sclass="z-combobox-allign-middle"></combobox>
+				<button id="generateReportButton" label="Report" sclass="modButton" disabled="false"></button>		
+			</hlayout>			
+			<listbox id="disbursementListListbox" height="540px" style="border-bottom: 1px solid lightgrey;">
+				<listhead>
+					<listheader label="Tgl." width="120px"/>
+					<listheader label="Tipe" width="60px"/>
+					<listheader label="No." width="120px"/>
+					<listheader label="Description" width="320px"/>
+					<listheader label="Jumlah" width="120px" align="right"/>
+					<listheader label="" width="40px"></listheader>
+					<!-- to smooth out the listbox title -->
+					<listheader/>
+				</listhead>	
+			</listbox>
+			<hlayout style="padding: 5px;" valign="middle">
+				<button id="saveButton" label="Simpan" sclass="btn-primary" iconSclass="z-icon-save" disabled="true"/>
+				<button id="printButton" label="Print" sclass="btn-primary" iconSclass="z-icon-print" disabled="true"></button>
+			</hlayout>		
+		</vbox>
+	</center>		
+</borderlayout>
+</zk>
